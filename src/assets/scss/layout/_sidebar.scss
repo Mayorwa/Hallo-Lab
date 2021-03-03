@@ -229,32 +229,159 @@
         padding: 0 20px;
     }
 }
-.switch{
-    display: flex;
-    align-items: center;
-    height: 56px;
-    padding: 0 20px;
-    border-radius: 12px;
-    white-space: nowrap;
-    font-weight: 600;
-    color: #808191;
-    transition: all .2s;
-}
-.switch__icon {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-shrink: 0;
-    width: 24px;
-    height: 24px;
-    font-size: 0;
-    .icon{
-        font-size: 24px;
+@include respond-to('desktop-xl'){
+    .sidebar {
+        padding-top: 120px;
+    }
+    .sidebar__head {
+        height: 120px;
+        padding: 0;
+    }
+    .sidebar.small.active .sidebar__mail {
+        display: none;
     }
 }
-.switch__text{
-    margin-left: 16px;
-    font-size: 16px;
-    line-height: 1;
+
+@include respond-to('desktop-bp'){
+    .sidebar {
+        width: 96px;
+    }
+    .sidebar__logo {
+        display: none;
+    }
+    .sidebar__toggle svg {
+        -webkit-transform: scale(-1, 1);
+        -ms-transform: scale(-1, 1);
+        transform: scale(-1, 1);
+    }
+    .sidebar__item {
+        padding: 0 16px;
+    }
+    .sidebar__mail {
+        display: none;
+    }
+    .sidebar__bottom {
+        padding: 0 12px;
+    }
+    .sidebar .switch__in {
+        padding: 0;
+    }
+    .sidebar .switch__icon {
+        left: 46px;
+    }
+    .sidebar .switch__icon .icon {
+        font-size: 16px;
+    }
+    .sidebar .switch__input:checked + .switch__in .switch__icon {
+        left: 10px;
+    }
+    .sidebar.active {
+        width: 255px;
+        -webkit-box-shadow: 5px 0 40px rgba(0, 0, 0, 0.1);
+        box-shadow: 5px 0 40px rgba(0, 0, 0, 0.1);
+    }
+    .sidebar.active .sidebar__logo {
+        display: inline-block;
+    }
+    .active .sidebar__toggle svg {
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        transform: scale(1);
+    }
+    .sidebar.active .sidebar__item {
+        padding: 0 20px;
+    }
+    .sidebar.active .sidebar__bottom {
+        padding: 0 20px;
+    }
+    .sidebar.active .switch__in {
+        padding-left: 46px;
+    }
+    .sidebar.active .switch__icon {
+        left: 0;
+    }
+    .sidebar.active .switch__icon .icon {
+        font-size: 24px;
+    }
+    .sidebar.active .switch__input:checked + .switch__in .switch__icon {
+        left: 0;
+    }
+}
+
+@include respond-to('desktop-l'){
+    .sidebar {
+        width: 255px;
+        padding-bottom: 90px;
+        -webkit-transform: translateX(-100%);
+        -ms-transform: translateX(-100%);
+        transform: translateX(-100%);
+        -webkit-transition: all .2s;
+        -o-transition: all .2s;
+        transition: all .2s;
+    }
+    .sidebar__head .sidebar__close {
+        display: inline-block;
+    }
+    .sidebar__logo {
+        display: inline-block;
+    }
+    .sidebar__toggle {
+        display: none;
+    }
+    .sidebar__item {
+        padding: 0 20px;
+    }
+    .sidebar__mail {
+        display: none;
+    }
+    .sidebar__search {
+        display: block;
+    }
+    .sidebar__start {
+        width: 56px;
+    }
+    .sidebar__bottom {
+        padding: 0 20px;
+    }
+    .sidebar .switch__in {
+        padding-left: 46px;
+    }
+    .sidebar .switch__icon {
+        left: 0;
+    }
+    .sidebar .switch__icon .icon {
+        font-size: 24px;
+    }
+    .sidebar .switch__input:checked + .switch__in .switch__icon {
+        left: 0;
+    }
+    .sidebar.active {
+        -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+        transform: translateX(0);
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+    .sidebar.small.active {
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+}
+
+@include respond-to('lg-mobile'){
+    .sidebar {
+        padding: 94px 20px 72px;
+    }
+    .sidebar__head {
+        height: 94px;
+    }
+    .sidebar__nav {
+        margin-bottom: 16px;
+    }
+    .sidebar__item {
+        height: 52px;
+    }
+    .sidebar__user {
+        display: inline-block;
+    }
 }
