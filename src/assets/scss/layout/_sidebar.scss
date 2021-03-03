@@ -129,7 +129,7 @@
         height: 24px;
         font-size: 0;
         & .icon {
-            font-size: 22px;
+            font-size: 24px;
             fill: #808191;
             -webkit-transition: fill .2s;
             -o-transition: fill .2s;
@@ -189,7 +189,8 @@
     }
 
     &.active &__logo,
-    &.small &__logo {
+    &.small &__logo,
+    &.active &__bottom &__text{
         display: none;
     }
 
