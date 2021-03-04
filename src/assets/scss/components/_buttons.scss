@@ -10,7 +10,7 @@
     font-family: $font-1;
     display: block;
     width: fit-content;
-    font-weight: 600;
+    font-weight: normal;
     text-decoration: none;
     text-align: center;
     transition: color 0.3s $ease-out-quad, background-color 0.3s $ease-out-quad,
@@ -71,6 +71,36 @@
         &:hover {
             border-color: white;
             background-color: transparent;
+        }
+    }
+
+    &--red-white {
+        background-color: $text-red;
+        border: 2px solid transparent;
+        color: $white;
+
+        &:hover {
+            background-color: $text-red-80;
+        }
+    }
+
+    &--success {
+        background-color: $text-green;
+        border: 2px solid transparent;
+        color: $white;
+
+        &:hover {
+            background-color: $text-green-80;
+        }
+    }
+
+    &--blue-white {
+        background-color: $text-blue;
+        border: 2px solid transparent;
+        color: $white;
+
+        &:hover {
+            background-color: $text-blue-80;
         }
     }
 

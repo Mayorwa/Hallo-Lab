@@ -95,16 +95,20 @@
         white-space: nowrap;
         font-weight: 600;
         color: #808191;
-        -webkit-transition: all .2s;
-        -o-transition: all .2s;
-        transition: all .2s;
+        -webkit-transition: all .4s;
+        -o-transition: all .4s;
+        transition: all .4s;
     }
 
     &__item:hover, &__item.active {
         color: #355DFF;
     }
 
-    &__item:hover .icon, &__item.active .icon {
+    &__item .icon{
+
+    }
+
+    &__item:hover .icon g [fill], &__item.active .icon g [fill]{
         fill: #355DFF;
     }
 
@@ -131,9 +135,9 @@
         & .icon {
             font-size: 24px;
             fill: #808191;
-            -webkit-transition: fill .2s;
-            -o-transition: fill .2s;
-            transition: fill .2s;
+            & g [fill]{
+                transition: fill .4s;
+            }
         }
         &:before {
             content: "";
