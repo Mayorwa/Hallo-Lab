@@ -40,7 +40,7 @@
                     </div>
                     <div class="sidebar__text">Overview</div>
                 </a>
-                <a href="/services" :class="routeName === 'services' ? 'active' : ''" class="sidebar__item">
+                <router-link to="/services" :class="routeName === 'services' ? 'active' : ''" class="sidebar__item">
                     <div class="sidebar__icon">
                         <svg class="icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -51,7 +51,7 @@
                         </svg>
                     </div>
                     <div class="sidebar__text">Services</div>
-                </a>
+                </router-link>
                 <a href="/employee" :class="routeName === 'employee' ? 'active' : ''" class="sidebar__item">
                     <div class="sidebar__icon">
                         <svg class="icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
