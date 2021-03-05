@@ -2,7 +2,7 @@
     <div class="sidebar">
         <div class="sidebar__head">
             <a class="sidebar__logo">
-                <img class="sidebar__pic sidebar__pic_light" src="@/assets/img/logo-sm.svg" alt="" />
+                <img class="sidebar__pic sidebar__pic_light" src="@/assets/img/ava-header.png" alt="" />
             </a>
             <button class="sidebar__toggle">
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">

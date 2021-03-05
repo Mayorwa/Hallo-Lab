@@ -9,6 +9,6 @@
                 </g>
             </svg>
         </button>
-        <a class="header__logo" href="index-2.html"><img src="@/assets/img/logo-sm.svg" alt="" /></a>
+        <a class="header__logo" href="index-2.html"><img src="@/assets/img/ava-header.png" alt="" /></a>
     </div>
 </template>
