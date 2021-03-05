@@ -126,7 +126,7 @@
                         <div class="prices__cell">email</div>
                         <div class="prices__cell">office</div>
                         <div class="prices__cell">job title</div>
-                        <div class="prices__cell">date purchased</div>
+                        <div class="prices__cell">creation date</div>
                         <div class="prices__cell">actions</div>
                     </div>
                     <div v-for="(employee, index) in employees" class="prices__row" :key="index">

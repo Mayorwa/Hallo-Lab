@@ -130,7 +130,7 @@
                         <div class="prices__cell">address</div>
                         <div class="prices__cell">city</div>
                         <div class="prices__cell">country</div>
-                        <div class="prices__cell">date purchased</div>
+                        <div class="prices__cell">creation date</div>
                         <div class="prices__cell">actions</div>
                     </div>
                     <div v-for="(customer, index) in customers" class="prices__row" :key="index">

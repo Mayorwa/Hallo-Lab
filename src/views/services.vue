@@ -114,7 +114,7 @@
                         <div class="prices__cell">code</div>
                         <div class="prices__cell">name</div>
                         <div class="prices__cell">description</div>
-                        <div class="prices__cell">date purchased</div>
+                        <div class="prices__cell">creation date</div>
                         <div class="prices__cell">actions</div>
                     </div>
                     <div v-for="(service, index) in services" class="prices__row" :key="index">

@@ -29,7 +29,7 @@
                                     </svg>
                                 </div>
                                 <div class="card__title h6">services</div>
-                                <div class="card__number h4">22 <span>records</span></div>
+                                <div class="card__number h4">{{statistics.services}} <span>records</span></div>
                                 <a class="card__btn button button--blue-white" href="/services">view records</a>
                             </div>
                         </div>
@@ -53,7 +53,7 @@
                                     </svg>
                                 </div>
                                 <div class="card__title h6">customers</div>
-                                <div class="card__number h4">22 <span>records</span></div>
+                                <div class="card__number h4">{{statistics.customers}} <span>records</span></div>
                                 <a class="card__btn button button--blue-white" href="/customer">view records</a>
                             </div>
                         </div>
@@ -77,7 +77,7 @@
                                     </svg>
                                 </div>
                                 <div class="card__title h6">employees</div>
-                                <div class="card__number h4">10 <span>records</span></div>
+                                <div class="card__number h4">{{statistics.employees}} <span>records</span></div>
                                 <a class="card__btn button button--blue-white" href="/employee">view records</a>
                             </div>
                         </div>
@@ -102,7 +102,7 @@
                                     </svg>
                                 </div>
                                 <div class="card__title h6">transactions</div>
-                                <div class="card__number h4">22 <span>records</span></div>
+                                <div class="card__number h4">{{statistics.transactions}} <span>records</span></div>
                                 <a class="card__btn button button--blue-white" href="/transactions">view records</a>
                             </div>
                         </div>
@@ -126,7 +126,7 @@
                                     </svg>
                                 </div>
                                 <div class="card__title h6">orders</div>
-                                <div class="card__number h4">22 <span>records</span></div>
+                                <div class="card__number h4">{{statistics.orders}} <span>records</span></div>
                                 <a class="card__btn button button--blue-white" href="/order">view records</a>
                             </div>
                         </div>
@@ -151,7 +151,7 @@
                                     </svg>
                                 </div>
                                 <div class="card__title h6">offices</div>
-                                <div class="card__number h4">22 <span>records</span></div>
+                                <div class="card__number h4">{{statistics.offices}} <span>records</span></div>
                                 <a class="card__btn button button--blue-white" href="/office">view records</a>
                             </div>
                         </div>
@@ -164,5 +164,17 @@
 <script>
     export default {
         name: 'overview',
+        data() {
+            return {
+                statistics: {
+                    offices: 3,
+                    services: 7,
+                    customers: 121,
+                    employees: 64,
+                    transactions: 1064,
+                    orders: 1082,
+                },
+            }
+        }
     }
 </script>
