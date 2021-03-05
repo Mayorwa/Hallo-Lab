@@ -8,37 +8,37 @@ const routes = [
     redirect: {name: "overview",},
     children: [
       {
-        path: '/overview',
+        path: 'overview',
         name: 'overview',
         component: () => import("@/views/overview.vue"),
       },
       {
-        path: '/services',
+        path: 'services',
         name: 'services',
         component: () => import("@/views/services.vue"),
       },
       {
-        path: '/transactions',
+        path: 'transactions',
         name: 'transactions',
         component: () => import("@/views/transactions.vue"),
       },
       {
-        path: '/office',
+        path: 'office',
         name: 'office',
         component: () => import("@/views/office.vue"),
       },
       {
-        path: '/customer',
+        path: 'customer',
         name: 'customer',
         component: () => import("@/views/customer.vue"),
       },
       {
-        path: '/employee',
+        path: 'employee',
         name: 'employee',
         component: () => import("@/views/employee.vue"),
       },
       {
-        path: '/order',
+        path: 'order',
         name: 'order',
         component: () => import("@/views/order.vue"),
       },
