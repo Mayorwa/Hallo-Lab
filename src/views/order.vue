@@ -17,7 +17,7 @@
                 </a>
             </div>
             <div class="prices_description">
-                records of orders customers have placed
+                records of order's customers have placed
             </div>
             <transition name="fade" >
                 <div class="modal-mask" v-if="showModal">
