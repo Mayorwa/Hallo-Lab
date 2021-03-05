@@ -14,8 +14,13 @@
                 </svg>
             </button>
             <button class="sidebar__close">
-                <svg class="icon icon-close">
-                    <use xlink:href="@/assets/img/sprite.svg#icon-close"></use>
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40px" height="40px" viewBox="0 0 30 30" version="1.1">
+                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <g transform="translate(12.000000, 12.000000) rotate(-45.000000) translate(-12.000000, -12.000000) translate(4.000000, 4.000000)" fill="#000000">
+                            <rect x="0" y="7" width="16" height="2" rx="1"></rect>
+                            <rect opacity="0.3" transform="translate(8.000000, 8.000000) rotate(-270.000000) translate(-8.000000, -8.000000)" x="0" y="7" width="16" height="2" rx="1"></rect>
+                        </g>
+                    </g>
                 </svg>
             </button>
         </div>

@@ -5,7 +5,7 @@ const routes = [
     path: "",
     name: "dashboardContainer",
     component: () => import("@/layouts/dashboard.vue"),
-    redirect: {name: "order",},
+    redirect: {name: "overview",},
     children: [
       {
         path: '/overview',
