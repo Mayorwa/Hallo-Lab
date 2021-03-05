@@ -104,8 +104,8 @@
         color: #355DFF;
     }
 
-    &__item .icon{
-
+    &__item .icon g [fill]{
+        fill: #808191;
     }
 
     &__item:hover .icon g [fill], &__item.active .icon g [fill]{
