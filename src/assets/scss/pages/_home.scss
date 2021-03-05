@@ -197,6 +197,15 @@
     padding: 10px 20px;
 }
 
+.prices__description{
+    white-space: normal;
+    p{
+        width: 400px;
+        font-size: 15px;
+        line-height: 1.05;
+    }
+}
+
 .prices__cell:last-child {
     padding-right: 16px;
     border-radius: 0 12px 12px 0;

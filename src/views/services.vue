@@ -2,7 +2,7 @@
     <div class="page__container">
         <div class="prices">
             <div class="prices__head">
-                <div class="prices__title h6">Employees</div>
+                <div class="prices__title h6">Services</div>
                 <a class="button button--success" @click="showModal = true">
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                         <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -17,7 +17,7 @@
                 </a>
             </div>
             <div class="prices_description">
-                records of employees in hallo labs
+                records of services offered by Hallo labs
             </div>
             <transition name="fade" >
                 <div class="modal-mask" v-if="showModal">
@@ -26,36 +26,25 @@
 
                             <div class="modal-header">
                                 <div class="modal__title h6">
-                                    create employee
+                                    create service
                                 </div>
                                 <button type="button" class="modal-close" @click="showModal = false">×</button>
                             </div>
 
                             <div class="modal-body">
                                 <div class="modal__fieldset">
-                                    <div class="modal__row">
+                                    <div>
                                         <div class="modal__field">
                                             <div class="modal__label">name</div>
                                             <div class="modal__wrap"><input class="modal__input" type="text"></div>
                                         </div>
-                                        <div class="modal__field">
-                                            <div class="modal__label">email</div>
-                                            <div class="modal__wrap"><input class="modal__input" type="email"></div>
-                                        </div>
                                     </div>
-                                    <div class="modal__row">
+                                    <div>
                                         <div class="modal__field">
-                                            <div class="modal__label">office</div>
+                                            <div class="modal__label">description</div>
                                             <div class="modal__wrap">
-                                                <select class="modal__input">
-                                                    <option>Lagos office</option>
-                                                    <option>Abuja office</option>
-                                                </select>
+                                                <textarea name="" id="" cols="30" class="modal__input" rows="5"></textarea>
                                             </div>
-                                        </div>
-                                        <div class="modal__field">
-                                            <div class="modal__label">job title</div>
-                                            <div class="modal__wrap"><input class="modal__input" type="text"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -91,7 +80,7 @@
                                 <div class="modal__fieldset">
                                     <img src="@/assets/img/warning-red.png" class="modal__img"/>
                                     <h6>
-                                        delete employee (# {{deleteItem}})?
+                                        delete order (# {{deleteItem}})?
                                     </h6>
                                     <p>
                                         are you sure you want to delete this record, this is an irreversible action?
@@ -118,27 +107,27 @@
             </transition>
             <hr class="prices__hr">
             <div class="prices__container">
-                <p v-if="loading">Loading Employees ...</p>
+                <p v-if="loading">Loading Services ...</p>
                 <div v-else class="prices__table">
                     <div class="prices__row prices__row_head">
                         <div class="prices__cell">#</div>
+                        <div class="prices__cell">code</div>
                         <div class="prices__cell">name</div>
-                        <div class="prices__cell">email</div>
-                        <div class="prices__cell">office</div>
-                        <div class="prices__cell">job title</div>
+                        <div class="prices__cell">description</div>
                         <div class="prices__cell">date purchased</div>
                         <div class="prices__cell">actions</div>
                     </div>
-                    <div v-for="(employee, index) in employees" class="prices__row" :key="index">
-                        <div class="prices__cell"><a class="primary">{{employee.id}}</a></div>
-                        <div class="prices__cell">{{employee.name}}</div>
-                        <div class="prices__cell">{{employee.email}}</div>
-                        <div class="prices__cell">{{employee.office}}</div>
-                        <div class="prices__cell ">{{employee.job_title}}</div>
-                        <div class="prices__cell">{{ moment(String(employee.created_at)).format('MMMM Do YYYY, h:mm:ss a')}}</div>
+                    <div v-for="(service, index) in services" class="prices__row" :key="index">
+                        <div class="prices__cell"><a class="primary">{{service.id}}</a></div>
+                        <div class="prices__cell">{{service.code}}</div>
+                        <div class="prices__cell">{{service.name}}</div>
+                        <div class="prices__cell prices__description">
+                            <p>{{service.description}}</p>
+                        </div>
+                        <div class="prices__cell">{{ moment(String(service.created_at)).format('MMMM Do YYYY, h:mm:ss a')}}</div>
                         <div class="prices__cell prices__btns">
                             <a class="button button--blue-white">view details</a>
-                            <a class="button button--red-white" @click="toggleDeleteModal(employee.id)">
+                            <a class="button button--red-white" @click="toggleDeleteModal(service.id)">
                                 <svg class="icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                                     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                         <rect x="0" y="0" width="24" height="24"/>
@@ -156,32 +145,32 @@
     </div>
 </template>
 <script>
+    const numeral = require('numeral');
     const moment = require('moment');
     export default {
-        name: 'employee',
+        name: 'services',
         data() {
             return {
+                numeral: numeral,
                 moment: moment,
                 loading: false,
                 showModal: false,
                 deleteModal: false,
                 selectedItem: {},
                 deleteItem: 0,
-                employees: [
+                services: [
                     {
                         id: 1,
-                        name: "dave john",
-                        email: "dave@hallo-lab.com",
-                        office: "Lagos Office",
-                        job_title: 'Customer succes',
+                        name: "logo design",
+                        code: "hllb34344",
+                        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, ",
                         created_at: '12-3-2019 14:20:34',
                     },
                     {
                         id: 2,
-                        name: "jane agbabiaka",
-                        email: "jane@hallo-lab.com",
-                        office: "Kaduna Office",
-                        job_title: 'Business Administrator',
+                        name: "banner design",
+                        code: "hllb808976",
+                        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, ",
                         created_at: '1-7-2018 03:34:02',
                     }
                 ],
