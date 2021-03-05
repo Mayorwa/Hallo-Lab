@@ -26,7 +26,7 @@
         </div>
         <div class="sidebar__body">
             <nav class="sidebar__nav">
-                <a href="/overview" :class="routeName === 'overview' ? 'active' : ''" class="sidebar__item">
+                <a href="/overview" class="sidebar__item">
                     <div class="sidebar__icon">
                         <svg class="icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -40,7 +40,7 @@
                     </div>
                     <div class="sidebar__text">Overview</div>
                 </a>
-                <router-link to="/services" :class="routeName === 'services' ? 'active' : ''" class="sidebar__item">
+                <a href="/services" class="sidebar__item">
                     <div class="sidebar__icon">
                         <svg class="icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -51,8 +51,8 @@
                         </svg>
                     </div>
                     <div class="sidebar__text">Services</div>
-                </router-link>
-                <a href="/employee" :class="routeName === 'employee' ? 'active' : ''" class="sidebar__item">
+                </a>
+                <a href="/employee" class="sidebar__item">
                     <div class="sidebar__icon">
                         <svg class="icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -64,7 +64,7 @@
                     </div>
                     <div class="sidebar__text">Employees</div>
                 </a>
-                <a href="/customer" :class="routeName === 'customer' ? 'active' : ''" class="sidebar__item">
+                <a href="/customer" class="sidebar__item">
                     <div class="sidebar__icon">
                         <svg class="icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -76,7 +76,7 @@
                     </div>
                     <div class="sidebar__text">Customers</div>
                 </a>
-                <a href="/transactions" :class="routeName === 'transactions' ? 'active' : ''" class="sidebar__item">
+                <a href="/transactions" class="sidebar__item">
                     <div class="sidebar__icon">
                         <svg class="icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -89,7 +89,7 @@
                     </div>
                     <div class="sidebar__text">Transactions</div>
                 </a>
-                <a href="/order" :class="routeName === 'order' ? 'active' : ''" class="sidebar__item">
+                <a href="/order" class="sidebar__item">
                     <div class="sidebar__icon">
                         <svg class="icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -101,7 +101,7 @@
                     </div>
                     <div class="sidebar__text">Orders</div>
                 </a>
-                <a href="/office" :class="routeName === 'office' ? 'active' : ''" class="sidebar__item">
+                <a href="/office" class="sidebar__item">
                     <div class="sidebar__icon">
                         <svg class="icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -136,13 +136,7 @@
     import $ from 'jquery';
 
     export default {
-        data () {
-            return {
-                routeName: "",
-            };
-        },
         mounted(){
-            this.routeName = this.$route.name;
             var toggle = $('.sidebar__toggle'),
                 page = $('.page'),
                 sidebar = $('.sidebar'),
