@@ -30,16 +30,15 @@
 }
 
 .page__container {
-    margin-top: 100px;
-    padding: 0 64px 64px;
+    padding: 64px;
     @include respond-to('desktop-xxl'){
-        padding: 0 48px 64px;
+        padding: 64px 48px;
     }
     @include respond-to('desktop-xl'){
-        padding: 0 64px 64px;
+        padding: 64px;
     }
     @include respond-to('lg-mobile'){
-        padding: 0 16px 32px;
+        padding: 0px 16px 32px;
     }
 }
 
@@ -107,7 +106,7 @@
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    margin-bottom: 48px;
+    margin-bottom: 10px;
     .button{
         padding: 10px 20px;
         font-size: 16px;
@@ -120,6 +119,13 @@
             margin-left: 10px;
         }
     }
+}
+.prices_description{
+    margin-bottom: 15px;
+}
+.prices__hr{
+    margin-bottom: 38px;
+    border-top: transparent;
 }
 
 .prices__title{

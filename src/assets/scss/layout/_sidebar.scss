@@ -389,3 +389,7 @@
         display: inline-block;
     }
 }
+
+.page.toggle .sidebar.active .sidebar__bottom .sidebar__text{
+    display: block;
+}

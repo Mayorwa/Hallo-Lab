@@ -194,3 +194,32 @@
         }
     }
 }
+
+.pill{
+    align-items: center;
+    padding: 6px 16px;
+    border-radius: 10px;
+    background: rgba(1,103,255, 0.17);
+    color: $text-blue;
+    letter-spacing: 1.75px;
+    margin: 0 auto;
+    line-height: 1;
+    font-size: 11px;
+    font-family: $font-1;
+    display: block;
+    width: fit-content;
+    font-weight: normal;
+    text-decoration: none;
+    text-align: center;
+    transition: color 0.3s $ease-out-quad, background-color 0.3s $ease-out-quad,
+    border-color 0.3s $ease-out-quad, box-shadow 0.3s $ease-out-quad;
+    &--blue{
+        background: rgba(1,103,255, 0.17);
+        color: $text-blue;
+    }
+
+    &--green{
+        background: rgba(39, 174, 96, 0.17);
+        color: $text-green-80;
+    }
+}

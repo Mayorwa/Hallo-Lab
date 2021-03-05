@@ -107,3 +107,11 @@ $ease-in-out-circ: cubic-bezier(0.785, 0.135, 0.15, 0.86);
 $ease-in-out-back: cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
 $footer-gradient: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(218, 209, 255, 0.4) 100%);
+
+.success{
+    color: $text-green-80;
+}
+
+.primary{
+    color: $text-blue;
+}

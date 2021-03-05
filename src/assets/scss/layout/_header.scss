@@ -520,3 +520,61 @@
         }
     }
 }
+
+.header {
+    position: relative;
+    z-index: 10;
+    display: none;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 48px 64px 36px;
+    @include respond-to('desktop-xl'){
+        padding: 48px 48px 36px;
+    }
+}
+
+.header__logo {
+    display: none;
+    margin-right: auto;
+}
+
+.header__logo img {
+    width: 60px;
+}
+
+.header__logo.hidden {
+    visibility: hidden;
+    opacity: 0;
+}
+
+@include respond-to('desktop-l'){
+    .header {
+        display: flex;
+        padding: 32px 64px;
+    }
+    .header__logo {
+        display: inline-block;
+    }
+    .header__indicator {
+        display: none;
+    }
+    .header__toggle {
+        display: inline-block;
+    }
+}
+
+@include respond-to('lg-mobile'){
+    .header {
+        padding: 24px 16px;
+    }
+    .header__logo img {
+        width: 46px;
+    }
+    .header__icon {
+        margin-right: 16px;
+    }
+    .header__toggle {
+        margin: 0;
+    }
+}
