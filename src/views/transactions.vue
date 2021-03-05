@@ -17,7 +17,7 @@
                 </a>
             </div>
             <div class="prices_description">
-                records of orders customers have placed
+                records of transactions made by customers
             </div>
             <transition name="fade" >
                 <div class="modal-mask" v-if="showModal">
@@ -26,7 +26,7 @@
 
                             <div class="modal-header">
                                 <div class="modal__title h6">
-                                    Create Orders
+                                    Create transaction
                                 </div>
                                 <button type="button" class="modal-close" @click="showModal = false">×</button>
                             </div>
@@ -35,31 +35,25 @@
                                 <div class="modal__fieldset">
                                     <div class="modal__row">
                                         <div class="modal__field">
-                                            <div class="modal__label">Your Full Name</div>
+                                            <div class="modal__label">order number</div>
                                             <div class="modal__wrap"><input class="modal__input" type="text"></div>
                                         </div>
                                         <div class="modal__field">
-                                            <div class="modal__label">Display Name</div>
-                                            <div class="modal__wrap"><input class="modal__input" type="text"></div>
-                                        </div>
-                                    </div>
-                                    <div class="modal__row">
-                                        <div class="modal__field">
-                                            <div class="modal__label">Email</div>
+                                            <div class="modal__label">customer email</div>
                                             <div class="modal__wrap"><input class="modal__input" type="email"></div>
                                         </div>
-                                        <div class="modal__field">
-                                            <div class="modal__label">Location</div>
-                                            <div class="modal__wrap"><input class="modal__input" type="text"></div>
-                                        </div>
                                     </div>
                                     <div class="modal__row">
                                         <div class="modal__field">
-                                            <div class="modal__label">Location</div>
+                                            <div class="modal__label">amount</div>
+                                            <div class="modal__wrap"><input class="modal__input" type="number"></div>
+                                        </div>
+                                        <div class="modal__field">
+                                            <div class="modal__label">status</div>
                                             <div class="modal__wrap">
                                                 <select class="modal__input">
-                                                    <option>Enabled $1,000,000 USD/day</option>
-                                                    <option>Disable $1,000,000 USD/day</option>
+                                                    <option>success</option>
+                                                    <option>failure</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -97,7 +91,7 @@
                                 <div class="modal__fieldset">
                                     <img src="@/assets/img/warning-red.png" class="modal__img"/>
                                     <h6>
-                                        delete order (# {{deleteItem}})?
+                                        delete transaction (# {{deleteItem}})?
                                     </h6>
                                     <p>
                                         are you sure you want to delete this record, this is an irreversible action?
@@ -128,28 +122,26 @@
                 <div v-else class="prices__table">
                     <div class="prices__row prices__row_head">
                         <div class="prices__cell">#</div>
-                        <div class="prices__cell">service</div>
+                        <div class="prices__cell">order number</div>
                         <div class="prices__cell">customer email</div>
-                        <div class="prices__cell">quantity</div>
-                        <div class="prices__cell">retainer status</div>
+                        <div class="prices__cell">status</div>
                         <div class="prices__cell">amount</div>
                         <div class="prices__cell">date purchased</div>
                         <div class="prices__cell">actions</div>
                     </div>
-                    <div v-for="(order, index) in orders" class="prices__row" :key="index">
-                        <div class="prices__cell"><a class="primary">{{order.id}}</a></div>
-                        <div class="prices__cell">{{order.service}}</div>
-                        <div class="prices__cell">{{order.email}}</div>
-                        <div class="prices__cell">{{order.quantity}}</div>
+                    <div v-for="(transaction, index) in transactions" class="prices__row" :key="index">
+                        <div class="prices__cell"><a class="primary">{{transaction.id}}</a></div>
+                        <div class="prices__cell">{{transaction.order_number}}</div>
+                        <div class="prices__cell">{{transaction.customer_email}}</div>
                         <div class="prices__cell ">
-                            <a class="pill pill--blue" v-if="order.retainer_status === 'project'">{{order.retainer_status}}</a>
-                            <a class="pill pill--green" v-else>{{order.retainer_status}}</a>
+                            <a class="pill pill--green" v-if="transaction.status === 'success'">{{transaction.status}}</a>
+                            <a class="pill pill--red" v-else>{{transaction.status}}</a>
                         </div>
-                        <div class="prices__cell success">₦ {{numeral(order.amount).format('0,0')}}</div>
-                        <div class="prices__cell">{{ moment(String(order.created_at)).format('MMMM Do YYYY, h:mm:ss a')}}</div>
+                        <div class="prices__cell success">₦ {{numeral(transaction.amount).format('0,0.00')}}</div>
+                        <div class="prices__cell">{{ moment(String(transaction.created_at)).format('MMMM Do YYYY, h:mm:ss a')}}</div>
                         <div class="prices__cell prices__btns">
                             <a class="button button--blue-white">view details</a>
-                            <a class="button button--red-white" @click="toggleDeleteModal(order.id)">
+                            <a class="button button--red-white" @click="toggleDeleteModal(transaction.id)">
                                 <svg class="icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                                     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                         <rect x="0" y="0" width="24" height="24"/>
@@ -180,23 +172,21 @@
                 deleteModal: false,
                 selectedItem: {},
                 deleteItem: 0,
-                orders: [
+                transactions: [
                     {
                         id: 1,
-                        service: "logo design",
-                        email: "dave@gmail.com",
-                        quantity: 30,
-                        retainer_status: 'project',
+                        order_number: "#798-lagos-london",
+                        customer_email: "dave@gmail.com",
+                        status: 'failure',
                         amount: 20000,
                         created_at: '12-3-2019 14:20:34',
                     },
                     {
                         id: 2,
-                        service: "banner and flyer design",
-                        email: "tunde@gmail.com",
-                        quantity: 2200,
-                        retainer_status: 'retainer',
-                        amount: 346500,
+                        order_number: "#1004-abuja-engugu",
+                        customer_email: "tunde@gmail.com",
+                        status: 'success',
+                        amount: 100000,
                         created_at: '1-7-2018 03:34:02',
                     }
                 ],

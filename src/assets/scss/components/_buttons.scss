@@ -238,4 +238,9 @@
         background: rgba(39, 174, 96, 0.17);
         color: $text-green-80;
     }
+
+    &--red{
+        background: rgba(255,46,46,0.25);
+        color: $text-red;
+    }
 }

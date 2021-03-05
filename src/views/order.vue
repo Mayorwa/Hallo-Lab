@@ -26,7 +26,7 @@
 
                             <div class="modal-header">
                                 <div class="modal__title h6">
-                                    Create Orders
+                                    Create orders
                                 </div>
                                 <button type="button" class="modal-close" @click="showModal = false">×</button>
                             </div>
@@ -35,33 +35,43 @@
                                 <div class="modal__fieldset">
                                     <div class="modal__row">
                                         <div class="modal__field">
-                                            <div class="modal__label">Your Full Name</div>
-                                            <div class="modal__wrap"><input class="modal__input" type="text"></div>
+                                            <div class="modal__label">Service</div>
+                                            <div class="modal__wrap">
+                                                <select class="modal__input">
+                                                    <option>Logo design</option>
+                                                    <option>Banner design</option>
+                                                    <option>Flyer design</option>
+                                                </select>
+                                            </div>
                                         </div>
                                         <div class="modal__field">
-                                            <div class="modal__label">Display Name</div>
-                                            <div class="modal__wrap"><input class="modal__input" type="text"></div>
+                                            <div class="modal__label">customer email</div>
+                                            <div class="modal__wrap"><input class="modal__input" type="email"></div>
                                         </div>
                                     </div>
                                     <div class="modal__row">
                                         <div class="modal__field">
-                                            <div class="modal__label">Email</div>
+                                            <div class="modal__label">employee email</div>
                                             <div class="modal__wrap"><input class="modal__input" type="email"></div>
                                         </div>
                                         <div class="modal__field">
-                                            <div class="modal__label">Location</div>
-                                            <div class="modal__wrap"><input class="modal__input" type="text"></div>
+                                            <div class="modal__label">payment status</div>
+                                            <div class="modal__wrap">
+                                                <select class="modal__input">
+                                                    <option>installment</option>
+                                                    <option>one off</option>
+                                                </select>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="modal__row">
                                         <div class="modal__field">
-                                            <div class="modal__label">Location</div>
-                                            <div class="modal__wrap">
-                                                <select class="modal__input">
-                                                    <option>Enabled $1,000,000 USD/day</option>
-                                                    <option>Disable $1,000,000 USD/day</option>
-                                                </select>
-                                            </div>
+                                            <div class="modal__label">amount</div>
+                                            <div class="modal__wrap"><input class="modal__input" type="number"></div>
+                                        </div>
+                                        <div class="modal__field">
+                                            <div class="modal__label">amount paid so far</div>
+                                            <div class="modal__wrap"><input class="modal__input" type="number"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -130,22 +140,25 @@
                         <div class="prices__cell">#</div>
                         <div class="prices__cell">service</div>
                         <div class="prices__cell">customer email</div>
-                        <div class="prices__cell">quantity</div>
-                        <div class="prices__cell">retainer status</div>
+                        <div class="prices__cell">employee email</div>
+                        <div class="prices__cell">payment status</div>
                         <div class="prices__cell">amount</div>
+                        <div class="prices__cell">amount paid so far</div>
                         <div class="prices__cell">date purchased</div>
                         <div class="prices__cell">actions</div>
                     </div>
                     <div v-for="(order, index) in orders" class="prices__row" :key="index">
                         <div class="prices__cell"><a class="primary">{{order.id}}</a></div>
                         <div class="prices__cell">{{order.service}}</div>
-                        <div class="prices__cell">{{order.email}}</div>
-                        <div class="prices__cell">{{order.quantity}}</div>
+                        <div class="prices__cell">{{order.customer_email}}</div>
+                        <div class="prices__cell">{{order.employee_email}}</div>
                         <div class="prices__cell ">
-                            <a class="pill pill--blue" v-if="order.retainer_status === 'project'">{{order.retainer_status}}</a>
-                            <a class="pill pill--green" v-else>{{order.retainer_status}}</a>
+                            <a class="pill pill--blue" v-if="order.status === 'installment'">{{order.status}}</a>
+                            <a class="pill pill--green" v-else>{{order.status}}</a>
                         </div>
-                        <div class="prices__cell success">₦ {{numeral(order.amount).format('0,0')}}</div>
+                        <div class="prices__cell success">₦ {{numeral(order.amount).format('0,0.00')}}</div>
+                        <div class="prices__cell" v-if="order.amountPaid === null">null</div>
+                        <div class="prices__cell success" v-else>₦ {{numeral(order.amountPaid).format('0,0.00')}}</div>
                         <div class="prices__cell">{{ moment(String(order.created_at)).format('MMMM Do YYYY, h:mm:ss a')}}</div>
                         <div class="prices__cell prices__btns">
                             <a class="button button--blue-white">view details</a>
@@ -184,21 +197,23 @@
                     {
                         id: 1,
                         service: "logo design",
-                        email: "dave@gmail.com",
-                        quantity: 30,
-                        retainer_status: 'project',
-                        amount: 20000,
+                        customer_email: "dave@gmail.com",
+                        employee_email: "jane@hallo-labs.com",
+                        status: 'installment',
+                        amount: 180000,
+                        amountPaid: 1000,
                         created_at: '12-3-2019 14:20:34',
                     },
                     {
                         id: 2,
-                        service: "banner and flyer design",
-                        email: "tunde@gmail.com",
-                        quantity: 2200,
-                        retainer_status: 'retainer',
-                        amount: 346500,
-                        created_at: '1-7-2018 03:34:02',
-                    }
+                        service: "logo design",
+                        customer_email: "tunde@gmail.com",
+                        employee_email: "dave@hallo-labs.com",
+                        status: 'one off',
+                        amount: 34500,
+                        amountPaid: null,
+                        created_at: '12-3-2019 14:20:34',
+                    },
                 ],
             }
         },
