@@ -1,6 +1,5 @@
 <template>
     <div class="header header_border">
-        <a class="header__logo" href="index-2.html"><img src="@/assets/img/logo-sm.svg" alt="" /></a>
         <button class="header__toggle">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -10,5 +9,6 @@
                 </g>
             </svg>
         </button>
+        <a class="header__logo" href="index-2.html"><img src="@/assets/img/logo-sm.svg" alt="" /></a>
     </div>
 </template>

@@ -2,8 +2,7 @@
     <div class="sidebar">
         <div class="sidebar__head">
             <a class="sidebar__logo">
-                <img class="sidebar__pic sidebar__pic_light" src="@/assets/img/logo.svg" alt="" />
-                <img class="sidebar__pic sidebar__pic_dark" src="@/assets/img/logo-white.svg" alt="" />
+                <img class="sidebar__pic sidebar__pic_light" src="@/assets/img/logo-sm.svg" alt="" />
             </a>
             <button class="sidebar__toggle">
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -22,7 +21,7 @@
         </div>
         <div class="sidebar__body">
             <nav class="sidebar__nav">
-                <a class="sidebar__item active">
+                <router-link :to="{name: 'overview'}" class="sidebar__item">
                     <div class="sidebar__icon">
                         <svg class="icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -35,8 +34,8 @@
                         </svg>
                     </div>
                     <div class="sidebar__text">Overview</div>
-                </a>
-                <a class="sidebar__item">
+                </router-link>
+                <router-link :to="{name: 'employee'}" class="sidebar__item">
                     <div class="sidebar__icon">
                         <svg class="icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -47,8 +46,8 @@
                         </svg>
                     </div>
                     <div class="sidebar__text">Employees</div>
-                </a>
-                <a class="sidebar__item">
+                </router-link>
+                <router-link :to="{name: 'customer'}" class="sidebar__item">
                     <div class="sidebar__icon">
                         <svg class="icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -59,8 +58,8 @@
                         </svg>
                     </div>
                     <div class="sidebar__text">Customers</div>
-                </a>
-                <a class="sidebar__item">
+                </router-link>
+                <router-link :to="{name: 'transactions'}" class="sidebar__item">
                     <div class="sidebar__icon">
                         <svg class="icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -72,8 +71,8 @@
                         </svg>
                     </div>
                     <div class="sidebar__text">Transactions</div>
-                </a>
-                <a class="sidebar__item">
+                </router-link>
+                <router-link :to="{name: 'order'}" class="sidebar__item">
                     <div class="sidebar__icon">
                         <svg class="icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -84,8 +83,8 @@
                         </svg>
                     </div>
                     <div class="sidebar__text">Orders</div>
-                </a>
-                <a class="sidebar__item">
+                </router-link>
+                <router-link :to="{name: 'office'}" class="sidebar__item">
                     <div class="sidebar__icon">
                         <svg class="icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -97,7 +96,7 @@
                         </svg>
                     </div>
                     <div class="sidebar__text">Offices</div>
-                </a>
+                </router-link>
             </nav>
         </div>
         <div class="sidebar__bottom">

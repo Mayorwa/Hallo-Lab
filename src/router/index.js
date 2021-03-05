@@ -5,13 +5,38 @@ const routes = [
     path: "",
     name: "dashboardContainer",
     component: () => import("@/layouts/dashboard.vue"),
-    redirect: {name: "home",},
+    redirect: {name: "order",},
     children: [
       {
-        path: '',
-        name: 'home',
-        component: () => import("@/views/home.vue"),
-      }
+        path: '/overview',
+        name: 'overview',
+        component: () => import("@/views/overview.vue"),
+      },
+      {
+        path: '/transactions',
+        name: 'transactions',
+        component: () => import("@/views/transactions.vue"),
+      },
+      {
+        path: '/office',
+        name: 'office',
+        component: () => import("@/views/office.vue"),
+      },
+      {
+        path: '/customer',
+        name: 'customer',
+        component: () => import("@/views/customer.vue"),
+      },
+      {
+        path: '/employee',
+        name: 'employee',
+        component: () => import("@/views/employee.vue"),
+      },
+      {
+        path: '/order',
+        name: 'order',
+        component: () => import("@/views/order.vue"),
+      },
     ]
   },
 ];
@@ -19,6 +44,7 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(),
   routes,
+  linkActiveClass: "active",
   scrollBehavior() {
     return {x: 0, y: 0}
   }

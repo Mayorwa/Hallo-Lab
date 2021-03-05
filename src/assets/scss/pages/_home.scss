@@ -257,10 +257,17 @@
     justify-content: space-evenly;
     align-items: center;
     .button{
-        display: block;
+        display: flex;
         height: fit-content;
         padding: 10px 20px;
         font-size: 14px;
+        align-items: center;
+        .icon{
+            margin-right: 5px;
+            & g [fill]{
+                fill: $white;
+            }
+        }
         &:first-child{
             margin-right: 10px;
         }
