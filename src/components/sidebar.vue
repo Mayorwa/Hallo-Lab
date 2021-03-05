@@ -21,7 +21,7 @@
         </div>
         <div class="sidebar__body">
             <nav class="sidebar__nav">
-                <router-link :to="{name: 'overview'}" class="sidebar__item">
+                <a href="/overview" :class="routeName === 'overview' ? 'active' : ''" class="sidebar__item">
                     <div class="sidebar__icon">
                         <svg class="icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -34,8 +34,8 @@
                         </svg>
                     </div>
                     <div class="sidebar__text">Overview</div>
-                </router-link>
-                <router-link :to="{name: 'services'}" class="sidebar__item">
+                </a>
+                <a href="/services" :class="routeName === 'services' ? 'active' : ''" class="sidebar__item">
                     <div class="sidebar__icon">
                         <svg class="icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -46,8 +46,8 @@
                         </svg>
                     </div>
                     <div class="sidebar__text">Services</div>
-                </router-link>
-                <router-link :to="{name: 'employee'}" class="sidebar__item">
+                </a>
+                <a href="/employee" :class="routeName === 'employee' ? 'active' : ''" class="sidebar__item">
                     <div class="sidebar__icon">
                         <svg class="icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -58,8 +58,8 @@
                         </svg>
                     </div>
                     <div class="sidebar__text">Employees</div>
-                </router-link>
-                <router-link :to="{name: 'customer'}" class="sidebar__item">
+                </a>
+                <a href="/customer" :class="routeName === 'customer' ? 'active' : ''" class="sidebar__item">
                     <div class="sidebar__icon">
                         <svg class="icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -70,8 +70,8 @@
                         </svg>
                     </div>
                     <div class="sidebar__text">Customers</div>
-                </router-link>
-                <router-link :to="{name: 'transactions'}" class="sidebar__item">
+                </a>
+                <a href="/transactions" :class="routeName === 'transactions' ? 'active' : ''" class="sidebar__item">
                     <div class="sidebar__icon">
                         <svg class="icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -83,8 +83,8 @@
                         </svg>
                     </div>
                     <div class="sidebar__text">Transactions</div>
-                </router-link>
-                <router-link :to="{name: 'order'}" class="sidebar__item">
+                </a>
+                <a href="/order" :class="routeName === 'order' ? 'active' : ''" class="sidebar__item">
                     <div class="sidebar__icon">
                         <svg class="icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -95,8 +95,8 @@
                         </svg>
                     </div>
                     <div class="sidebar__text">Orders</div>
-                </router-link>
-                <router-link :to="{name: 'office'}" class="sidebar__item">
+                </a>
+                <a href="/office" :class="routeName === 'office' ? 'active' : ''" class="sidebar__item">
                     <div class="sidebar__icon">
                         <svg class="icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -108,7 +108,7 @@
                         </svg>
                     </div>
                     <div class="sidebar__text">Offices</div>
-                </router-link>
+                </a>
             </nav>
         </div>
         <div class="sidebar__bottom">
@@ -131,7 +131,13 @@
     import $ from 'jquery';
 
     export default {
+        data () {
+            return {
+                routeName: "",
+            };
+        },
         mounted(){
+            this.routeName = this.$route.name;
             var toggle = $('.sidebar__toggle'),
                 page = $('.page'),
                 sidebar = $('.sidebar'),
