@@ -5,7 +5,7 @@
                 <div class="prices__title h6">Overview</div>
             </div>
             <div class="prices_description">
-                records of orders customers have placed
+                statistics of records in hallo labs
             </div>
             <hr class="prices__hr">
             <div class="container">
