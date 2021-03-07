@@ -115,7 +115,7 @@
     }
 
     &__item.active {
-        background: rgba(228, 228, 228, 0.3);
+        background: rgba(188,197,241, 0.3);
     }
 
     &__icon {
@@ -269,18 +269,6 @@
     .sidebar__bottom {
         padding: 0 12px;
     }
-    .sidebar .switch__in {
-        padding: 0;
-    }
-    .sidebar .switch__icon {
-        left: 46px;
-    }
-    .sidebar .switch__icon .icon {
-        font-size: 16px;
-    }
-    .sidebar .switch__input:checked + .switch__in .switch__icon {
-        left: 10px;
-    }
     .sidebar.active {
         width: 255px;
         -webkit-box-shadow: 5px 0 40px rgba(0, 0, 0, 0.1);
@@ -336,18 +324,6 @@
     }
     .sidebar__bottom {
         padding: 0 20px;
-    }
-    .sidebar .switch__in {
-        padding-left: 46px;
-    }
-    .sidebar .switch__icon {
-        left: 0;
-    }
-    .sidebar .switch__icon .icon {
-        font-size: 24px;
-    }
-    .sidebar .switch__input:checked + .switch__in .switch__icon {
-        left: 0;
     }
     .sidebar.active {
         -webkit-transform: translateX(0);
