@@ -29,6 +29,12 @@
     }
 }
 
+.page.toggle .page__content {
+    -webkit-transform: translateX(255px);
+    -ms-transform: translateX(255px);
+    transform: translateX(255px);
+}
+
 .page__container {
     padding: 64px;
     @include respond-to('desktop-xxl'){

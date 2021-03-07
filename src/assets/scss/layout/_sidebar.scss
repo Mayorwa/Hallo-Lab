@@ -300,18 +300,6 @@
     .sidebar.active .sidebar__bottom {
         padding: 0 20px;
     }
-    .sidebar.active .switch__in {
-        padding-left: 46px;
-    }
-    .sidebar.active .switch__icon {
-        left: 0;
-    }
-    .sidebar.active .switch__icon .icon {
-        font-size: 24px;
-    }
-    .sidebar.active .switch__input:checked + .switch__in .switch__icon {
-        left: 0;
-    }
 }
 
 @include respond-to('desktop-l'){
